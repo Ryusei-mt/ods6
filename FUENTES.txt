@@ -1,0 +1,22 @@
+WATERSTATS — CRÉDITOS DE RECURSOS
+Proyecto académico sobre el ODS 6: agua limpia y saneamiento.
+
+Fotografías en línea (Unsplash, https://unsplash.com/license):
+- Ola del océano (hero): https://unsplash.com/photos/1559827260-dc66d52bef19
+- Manos bajo el agua (Nosotros): https://unsplash.com/photos/1538300342682-cf57afb97285
+- Vaso de agua (galería): https://unsplash.com/photos/1548839140-29a749e1cf4d
+
+Imágenes locales: logo.png, torre.jpg, ninos.webp (material del equipo / referencias del proyecto).
+
+Iconos Facebook, Instagram y YouTube: Simple Icons v15.
+https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md
+Las marcas pertenecen a sus titulares; no implican afiliación.
+Favicon: logo.png del proyecto.
+
+Fuente tipográfica: Minecraft (css/fonts/Minecraft.ttf).
+
+Video: UNESCO en español. "Los Objetivos de Desarrollo Sostenible: qué son y cómo alcanzarlos".
+https://www.youtube.com/watch?v=MCKH5xk8X-g
+Se inserta desde YouTube; no se descarga ni se redistribuye.
+
+Los enlaces de redes sociales llevan a páginas generales; reemplazar por los del proyecto.

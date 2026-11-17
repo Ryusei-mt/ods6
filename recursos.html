@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video y guía | WaterStats</title>
+  <link rel="icon" type="image/png" href="imagenes/logo.png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor barra">
+    <a class="marca" href="index.html#inicio" aria-label="WaterStats, ir al inicio">
+      <img src="imagenes/logo.png" alt="" width="42" height="42">
+      WaterStats
+    </a>
+
+    <button id="boton-menu" class="hamburguesa" type="button"
+        aria-controls="navegacion" aria-expanded="false" aria-label="Abrir menú">
+      <span class="lineas" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span id="texto-menu">Menú</span>
+    </button>
+
+    <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+      <ul class="menu">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li>
+          <details id="resolver" class="desplegable">
+            <summary>Conoce más</summary>
+            <ul class="submenu">
+              <li><a href="index.html#servicios">Servicios</a></li>
+              <li><a href="index.html#orientador">Iniciativas</a></li>
+              <li><a href="index.html#contacto">Contáctanos</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="recursos.html" aria-current="page">Video y guía</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" class="contenedor seccion">
+
+  <!-- SECCIÓN DE VIDEO -->
+  <section id="video" class="recursos-seccion">
+    <h2>Video Educativo: Los Objetivos de Desarrollo Sostenible</h2>
+    <p>Descubre la importancia del uso responsable del agua y la necesidad de proteger nuestras fuentes hídricas para garantizar el acceso al agua limpia y saneamiento.</p>
+
+    <div class="video-contenedor">
+      <iframe
+        src="https://www.youtube.com/embed/MCKH5xk8X-g"
+        title="UNESCO: Los Objetivos de Desarrollo Sostenible, qué son y cómo alcanzarlos"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p><a href="https://www.youtube.com/watch?v=MCKH5xk8X-g" target="_blank" rel="noopener noreferrer">Abrir el video en YouTube</a> si no se reproduce aquí.</p>
+  </section>
+
+  <!-- SECCIÓN DE GUÍA PRÁCTICA -->
+  <section id="guia" class="recursos-seccion">
+    <h2>Guía Práctica: 4 Pasos para el Ahorro de Agua en Casa</h2>
+    <p>Aplica estas sencillas medidas en tu rutina diaria para contribuir directamente con los objetivos del ODS 6:</p>
+
+    <div class="tarjetas-guia">
+      <article class="tarjeta">
+        <h3>1. Inspección y Reparación</h3>
+        <ol class="lista-pasos">
+          <li>Revisa periódicamente grifos, llaves y tuberías de la casa.</li>
+          <li>Repara fugas de inmediato; un goteo constante desperdicia más de 30 litros al día.</li>
+          <li>Inspecciona el empaque del inodoro para asegurarte de que no haya filtraciones de agua.</li>
+        </ol>
+      </article>
+
+      <article class="tarjeta">
+        <h3>2. Uso Eficiente en el Baño</h3>
+        <ol class="lista-pasos">
+          <li>Cierra el grifo mientras te cepillas los dientes o te enjabonas las manos.</li>
+          <li>Procura tomar duchas breves de máximo 5 minutos.</li>
+          <li>Coloca una botella llena de agua en el tanque del inodoro para reducir el volumen de descarga.</li>
+        </ol>
+      </article>
+
+      <article class="tarjeta">
+        <h3>3. Ahorro en la Cocina y Lavado</h3>
+        <ol class="lista-pasos">
+          <li>Lava las frutas y verduras en un recipiente en lugar de dejar el agua corriendo.</li>
+          <li>Utiliza la lavadora solo cuando tengas una carga completa de ropa.</li>
+          <li>Aprovecha el agua del enjuague de ropa para limpiar pisos, patios o el inodoro.</li>
+        </ol>
+      </article>
+
+      <article class="tarjeta">
+        <h3>4. Reutilización e Innovación</h3>
+        <ol class="lista-pasos">
+          <li>Instala sistemas o recipientes para recolectar agua de lluvia.</li>
+          <li>Usa el agua recolectada para regar plantas y jardines durante las horas de menor sol.</li>
+          <li>Comparte estos hábitos con tu familia y comunidad para multiplicar el impacto.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p><strong>WaterStats</strong> · Proyectos ODS 6</p>
+    <p>WaterStats@water.com</p>
+    <nav class="redes" aria-label="Redes sociales de referencia">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/facebook.svg" alt="" width="24" height="24">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.svg" alt="" width="24" height="24">Instagram</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.svg" alt="" width="24" height="24">YouTube</a>
+    </nav>
+    <p>© 2026 WaterStats · <a href="FUENTES.txt">Créditos de recursos</a></p>
+  </div>
+</footer>
+</body>
+</html>

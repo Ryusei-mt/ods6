@@ -1,0 +1,702 @@
+/* PASO 1. El ancho incluye padding y borde: facilita calcular tamaños. */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* PASO 2. Estilos generales que heredan los textos. */
+body {
+  margin: 0;
+  font-family: Minecraft, Minecraft;
+  color: #2f3196;
+  background: #85D3FC;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.7rem;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: #1683ad;
+  text-underline-offset: 4px;
+}
+
+/* El foco visible permite recorrer la web con el teclado. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #3700ff;
+  outline-offset: 4px;
+}
+
+/* PASO 3. Nunca estirar una imagen más allá de su contenedor. */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contenedor {
+  width: 92%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.seccion {
+  padding: 3.5rem 0;
+}
+
+.fondo {
+  background: #ffffff;
+}
+
+.etiqueta {
+  font-weight: bold;
+  color: #2f3196;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.nota {
+  font-size: .9rem;
+}
+
+/* PASO 4. Flexbox alinea logo y navegación. wrap evita desbordamientos. */
+.cabecera {
+  background: white;
+  border-bottom: 1px solid #b9dff5;
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a,
+summary {
+  display: block;
+  padding: .65rem .8rem;
+  color: #2f3196;
+  cursor: pointer;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu a:hover,
+summary:hover {
+  background: #e3f4fd;
+  border-radius: .4rem;
+}
+
+/* El menú acompaña al usuario al bajar por la página.
+   sticky conserva su espacio: no hace falta compensar con padding en body.
+   top: 0 lo mantiene pegado arriba; z-index evita que las fotos lo tapen. */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 18px #2f319612;
+}
+
+/* Dejar espacio al navegar con #id para que el header no tape el título. */
+section[id],
+main[id] {
+  scroll-margin-top: 130px;
+}
+
+/* PASO 5. La lista interior es vertical. Solo details controla su apertura. */
+.desplegable {
+  position: relative;
+}
+
+summary {
+  list-style: revert;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 230px;
+  padding: .5rem;
+  margin: .3rem 0 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #b9dff5;
+  border-radius: .5rem;
+  box-shadow: 0 8px 20px #2f319622;
+  z-index: 10;
+}
+
+/* PASO 6. Dos columnas iguales: imagen y texto. minmax evita desborde. */
+.dos-columnas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.dos-columnas>* {
+  min-width: 0;
+}
+
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 2rem .8rem 2.5rem 1rem;
+}
+
+/* PASO 7. Enlaces y botones con apariencia consistente. */
+.boton {
+  display: inline-block;
+  padding: .8rem 1.1rem;
+  background: #5414a8;
+  color: white;
+  border: 0;
+  border-radius: .45rem;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #8c66bd;
+}
+
+.enlace {
+  display: inline-block;
+  margin: .8rem;
+}
+
+/* PASO 8. Tres tarjetas en escritorio. */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  padding: 1.5rem;
+  border: 1px solid #b9dff5;
+  border-radius: .7rem;
+  background: white;
+}
+
+.numero {
+  color: #5414a8;
+  font-weight: bold;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+figure {
+  margin: 0;
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: .6rem;
+}
+
+figcaption {
+  padding-top: .5rem;
+}
+
+blockquote {
+  margin-left: 0;
+  font-size: 1.35rem;
+}
+
+/* PASO 9. El orientador responde a los radios sin JavaScript. */
+.orientador {
+  border: 1px solid #7fbfe6;
+  border-radius: .6rem;
+  padding: 1.5rem;
+  min-width: 0;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 .5rem;
+}
+
+.orientador>label {
+  display: inline-block;
+  margin: .4rem 1rem .4rem 0;
+  padding: .4rem;
+  cursor: pointer;
+}
+
+.orientador>input:checked+label {
+  background: #5414a8;
+  color: white;
+  border-radius: .3rem;
+}
+
+.resultados {
+  background: white;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  margin-top: 1rem;
+}
+
+/* Primero ocultamos los tres paneles. */
+.respuesta {
+  display: none;
+}
+
+/* ~ busca un hermano posterior. :checked identifica la opción marcada. */
+#mochila:checked~.resultados .mochila,
+#libreta:checked~.resultados .libreta,
+#abrigo:checked~.resultados .abrigo {
+  display: block;
+}
+
+/* PASO 10. Cada campo ocupa una fila del formulario. */
+.formulario {
+  display: grid;
+  gap: .6rem;
+  background: white;
+  border: 1px solid #b9dff5;
+  padding: 1.5rem;
+  border-radius: .7rem;
+}
+
+.formulario>label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  padding: .7rem;
+  border: 1px solid #8b7465;
+  border-radius: .3rem;
+  background: white;
+  color: #3d302b;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #038ce7;
+}
+
+/* PASO 11. La proporción del video se conserva a cualquier ancho. */
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.confirmacion {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.pie {
+  background: #6ab0d8;
+  color: white;
+  padding: 2rem 0;
+}
+
+.pie a {
+  color: white;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.redes a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.redes img {
+  filter: invert(1);
+}
+
+.saltar {
+  position: absolute;
+  left: -9999px;
+}
+
+.saltar:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 1rem;
+  background: white;
+  z-index: 20;
+}
+
+/* PASO 12. TABLET: estas reglas se aplican a 900 px o menos. */
+@media (max-width: 900px) {
+  .barra {
+    gap: .4rem;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* PASO 13. CELULAR: cambiamos columnas por una sola columna. */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .dos-columnas,
+  .tarjetas,
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .dos-columnas {
+    gap: 1.5rem;
+  }
+
+  .hero,
+  .seccion {
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .barra nav {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .menu a,
+  summary {
+    padding: .45rem .55rem;
+    font-size: .95rem;
+  }
+
+  /* Conserva el desplegable vertical bajo Resolver y dentro de la pantalla. */
+  .submenu {
+    left: auto;
+    right: 0;
+    width: 205px;
+    max-width: 85vw;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  section[id],
+  main[id] {
+    scroll-margin-top: 190px;
+  }
+
+  .enlace {
+    margin-left: 0;
+  }
+
+  .formulario,
+  .orientador,
+  .resultados {
+    padding: 1rem;
+  }
+}
+
+/* Detalles cálidos: fondo de papel, acento terracota y bordes suaves. */
+.postal {
+  background: #fff;
+  padding: .8rem;
+  border: 1px solid #b9dff5;
+  border-radius: 2rem 1rem 2.8rem 1rem;
+  box-shadow: 8px 10px 0 #b9dff5;
+}
+
+.postal figcaption {
+  padding: .6rem .5rem .2rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+  letter-spacing: -.035em;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+.tarjeta:nth-child(2) {
+  background: #eaf7ff;
+  border-radius: 1.5rem .6rem 1.5rem .6rem;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  max-width: 780px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (max-width: 600px) {
+  .barra {
+    padding: .6rem 0;
+  }
+
+  .marca {
+    font-size: 1.2rem;
+  }
+
+  .marca img {
+    width: 30px;
+  }
+}
+/* ================== HERO ================== */
+.hero {
+  position: relative;
+  min-height: clamp(420px, 72vh, 620px);
+  padding: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #2f3196;
+}
+.hero-fondo {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=80') center / cover no-repeat;
+}
+/* Velo azul para que el texto siempre se lea bien */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(47,49,150,.55), rgba(2,40,90,.75));
+}
+.hero-texto {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 820px;
+  padding: 3rem 0;
+  text-align: center;
+  color: white;
+  animation: aparecer .8s ease-out both;
+}
+.hero-etiqueta {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: .3rem .9rem;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 2rem;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.hero-texto h1 {
+  margin: 0 0 1rem;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.hero-sub {
+  margin: 0 auto 1.8rem;
+  max-width: 600px;
+  font-size: 1.05rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-texto { animation: none; }
+}
+
+/* ================== MEJORAS DE UI ================== */
+.encabezado-seccion { max-width: 750px; margin-bottom: 2.5rem; }
+.intro { font-size: 1.05rem; margin-bottom: 0; }
+.nosotros-grid { align-items: stretch; }
+.pila { display: flex; flex-direction: column; gap: 1.2rem; }
+.pila .tarjeta { flex: 1; }
+.tarjeta h3 { margin-top: 0; }
+.tarjeta .nota { margin-bottom: 0; }
+.tarjeta.destacada { border-left: 4px solid #5414a8; }
+.postal { margin: 0; display: flex; flex-direction: column; }
+.postal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.4rem .6rem 1.8rem .6rem; }
+.postal figcaption { font-family: inherit; font-style: normal; padding: 1rem .6rem .4rem; line-height: 1.6; }
+.tarjeta, .boton, .galeria img { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.tarjetas .tarjeta:hover { transform: translateY(-4px); box-shadow: 0 10px 22px #2f319622; }
+.galeria img:hover { transform: scale(1.02); }
+.galeria { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .galeria { grid-template-columns: 1fr; } .hero { min-height: 440px; } }
+
+/* Botón hamburguesa móvil y estilos de recursos.html */
+.hamburguesa {
+  display: none;
+  align-items: center;
+  gap: .65rem;
+  min-height: 44px;
+  padding: .55rem .8rem;
+  border: 1px solid #5414a8;
+  border-radius: .45rem;
+  background: #5414a8;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+.lineas {
+  display: grid;
+  gap: 4px;
+  width: 22px;
+}
+.lineas span {
+  display: block;
+  height: 2px;
+  background: white;
+}
+[hidden] {
+  display: none !important;
+}
+
+.recursos-seccion { margin-bottom: 2.5rem; }
+.video-contenedor { margin: 1.2rem 0; }
+.video-contenedor iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: .7rem; display: block; }
+.tarjetas-guia { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.lista-pasos { padding-left: 1.2rem; margin: .8rem 0 0; }
+
+@media (max-width: 600px) {
+  .hamburguesa { display: inline-flex; }
+  .navegacion {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: .5rem 4%;
+    background: white;
+    border-bottom: 1px solid #b9dff5;
+    box-shadow: 0 8px 20px #2f319622;
+  }
+  .menu { flex-direction: column; align-items: stretch; gap: 0; }
+  .submenu { position: static; width: 100%; margin: 0; box-shadow: none; background: #f4fbff; }
+  .tarjetas-guia { grid-template-columns: 1fr; }
+}
+
+/* Selector de iniciativas: radios ocultos y etiquetas como botones (se ve bien en celular) */
+.orientador > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.orientador > label {
+  margin: .3rem .4rem .3rem 0;
+  padding: .55rem .9rem;
+  border: 1px solid #5414a8;
+  border-radius: .45rem;
+}
+.orientador > input:focus-visible + label {
+  outline: 3px solid #3700ff;
+  outline-offset: 3px;
+}
+.orientador > input:checked + label {
+  background: #5414a8;
+  color: white;
+}
+@media (max-width: 600px) {
+  .orientador > label { font-size: .9rem; padding: .5rem .7rem; }
+  .boton { width: 100%; text-align: center; }
+  .hero .boton { width: auto; }
+  .formulario .boton { width: 100%; }
+}

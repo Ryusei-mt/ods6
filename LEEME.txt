@@ -1,0 +1,21 @@
+WATERSTATS — INICIO RÁPIDO
+Sitio web académico sobre el ODS 6 (agua limpia y saneamiento) en el Perú.
+
+1. Extrae todo el ZIP y abre la carpeta web_site en Visual Studio Code.
+2. Abre index.html con Live Server (recomendado) o directamente en el navegador.
+   IMPORTANTE: YouTube bloquea videos incrustados en páginas abiertas con file://.
+   Para ver el video en "Video y guía" usa Live Server (http://127.0.0.1:5500).
+3. El menú tiene un desplegable "Conoce más". En celular aparece el botón "Menú".
+4. En "¿Qué deseas explorar?" elige una iniciativa y el panel cambia solo con CSS.
+5. Completa el formulario de contacto; al enviarlo se abre confirmacion.html.
+6. "Video y guía" abre una segunda página con un video (requiere Internet) y una guía.
+
+ESTRUCTURA
+index.html, recursos.html, confirmacion.html
+css/estilos.css  — estilos (fuente Minecraft, diseño responsive)
+js/menu.js       — menú hamburguesa y desplegable
+imagenes/, iconos/
+
+NOTAS
+Las fotos en línea (Unsplash) y el video requieren conexión a Internet.
+No se guarda información: el formulario es solo demostrativo.
